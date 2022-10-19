@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
+    // <AuthWrapper>
     <Router>
       <Routes>
         {/* <PrivateRoute> */}
@@ -13,6 +14,7 @@ function App() {
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>
+    // </AuthWrapper>
   );
 }
 
