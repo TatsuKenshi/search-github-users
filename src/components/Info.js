@@ -1,7 +1,9 @@
 import React from "react";
+import { GithubContext } from "../context/context";
 
 const Info = () => {
-  return <div>Info</div>;
+  const info = React.useContext(GithubContext)
+  return <div>Info : {info}</div>;
 };
 
 export default Info;
