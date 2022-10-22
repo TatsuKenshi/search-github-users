@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Card from "./Card";
+import Followers from "./Followers";
 
 const User = () => {
   return (
-    <div>User</div>
-  )
-}
+    <section className="section">
+      <div className="section-center" style={{ display: "flex" }}>
+        <Card></Card>
+        <Followers></Followers>
+      </div>
+    </section>
+  );
+};
 
-export default User
+export default User;
