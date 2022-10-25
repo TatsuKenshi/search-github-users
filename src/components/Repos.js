@@ -1,6 +1,6 @@
 import React from "react";
 import { GithubContext } from "../context/context";
-import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from "./charts";
+import { Pie3D, Column3D, Bar3D, Doughnut2D } from "./charts";
 
 const Repos = () => {
   const { repos } = React.useContext(GithubContext);
@@ -25,8 +25,14 @@ const Repos = () => {
   return (
     <section className="section">
       <div className="section-center">
-        {/* <ExampleChart data={chartData} /> */}
-        <Pie3D data={chartData} />
+        <div>
+          <Pie3D data={chartData} />
+          <Column3D />
+        </div>
+        <div>
+          <Bar3D />
+          <Doughnut2D />
+        </div>
       </div>
     </section>
   );
