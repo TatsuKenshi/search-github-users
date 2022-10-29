@@ -54,7 +54,9 @@ const Item = ({ icon, label, value, color }) => {
     <article style={{ marginRight: "20px" }} className="item">
       <span className={color}></span>
       <div>
-        <h3>{value}</h3>
+        <h3>
+          {icon} {value}
+        </h3>
         <p>{label}</p>
       </div>
     </article>
