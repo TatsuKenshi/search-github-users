@@ -17,6 +17,23 @@ import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 // Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme);
 
+//
+// // // Component overhaul
+//
+
+// Step 2 containing the chartData object is removed
+
+// Step 3 is changed
+
+// the chartComponent function receives the data prop from the Repos.js component, containing the data to be displayed in the chart
+// // it replaces the chartData object
+
+// inside the function we have chartConfigs object
+
+// Step 4 is removed
+
+// instead of Step 4, the chartComponent function returns the ReactFC component with spread out chartConfigs object as the sole prop.
+
 const ChartComponent = ({ data }) => {
   // STEP 3 - Creating the JSON object to store the chart configurations
   const chartConfigs = {
@@ -32,7 +49,7 @@ const ChartComponent = ({ data }) => {
         decimals: 1,
         pieRadius: "45%",
       },
-      // Chart Data
+      // below is the data prop
       data,
     },
   };
