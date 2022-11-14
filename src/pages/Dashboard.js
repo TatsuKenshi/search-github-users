@@ -2,7 +2,7 @@ import React from "react";
 import { Info, Repos, User, Search, Navbar } from "../components";
 import { GithubContext } from "../context/context";
 import loadingImage from "../images/preloader.gif";
-// import { GithubContext } from "../context/context";
+import "../styles/pages/Dashboard.scss";
 
 const Dashboard = () => {
   const { isLoading } = React.useContext(GithubContext);
