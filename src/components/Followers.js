@@ -8,10 +8,10 @@ const Followers = () => {
     <div
       className="followers"
       style={{
-        width: "300px",
-        height: "250px",
+        width: "400px",
+        height: "300px",
         overflow: "scroll",
-        marginLeft: "20px",
+        background: "cyan",
       }}
     >
       {followers.map((follower, index) => {

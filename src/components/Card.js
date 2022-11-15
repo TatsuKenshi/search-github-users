@@ -18,11 +18,11 @@ const Card = () => {
   return (
     <div
       style={{
-        background: "aliceBlue",
-        width: "max-content",
+        background: "cyan",
+        width: "700px",
+        height: "300px",
       }}
     >
-      <p>user</p>
       <header
         style={{
           display: "flex",

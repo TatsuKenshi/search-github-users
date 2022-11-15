@@ -1,0 +1,35 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 128, 128, 0.5);
+  padding: 10px 0;
+  box-shadow: 0 0 15px 0 slategray;
+
+  img {
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+  h4 {
+    margin-right: 20px;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background: rgba(0, 128, 128, 0.8);
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+    border: solid 1px rgba(0, 128, 128, 0.8);
+  }
+
+  button:hover {
+    border: solid 1px #fff;
+    background: #fff;
+    color: rgba(0, 128, 128, 0.8);
+  }
+}

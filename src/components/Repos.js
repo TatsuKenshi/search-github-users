@@ -1,6 +1,7 @@
 import React from "react";
 import { GithubContext } from "../context/context";
 import { Pie3D, Column3D, Bar3D, Doughnut2D } from "./charts";
+import "../styles/components/Repos.scss";
 
 const Repos = () => {
   const { repos } = React.useContext(GithubContext);
@@ -104,16 +105,14 @@ const Repos = () => {
   forks = Object.values(forks).slice(-5).reverse();
 
   return (
-    <section className="section">
-      <div className="section-center">
-        <div style={{ display: "flex" }}>
-          <Pie3D data={mostUsed} />
-          <Column3D data={stars} />
-        </div>
-        <div style={{ display: "flex" }}>
-          <Doughnut2D data={mostPopular} />
-          <Bar3D data={forks} />
-        </div>
+    <section className="repo-section">
+      <div className="repo-section-top">
+        <Pie3D data={mostUsed} />
+        <Column3D data={stars} />
+      </div>
+      <div className="repo-section-bottom">
+        <Doughnut2D data={mostPopular} />
+        <Bar3D data={forks} />
       </div>
     </section>
   );

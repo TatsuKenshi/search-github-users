@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import "../styles/components/Navbar.scss";
 
 const Navbar = () => {
   const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
@@ -12,7 +13,7 @@ const Navbar = () => {
 
       {isUser && user?.name && (
         <h4>
-          Welcome, <strong>{user.name.toUpperCase()}</strong>{" "}
+          welcome, <strong>{user.name.toUpperCase()}</strong>{" "}
         </h4>
       )}
       {isUser ? (

@@ -2,6 +2,7 @@ import React from "react";
 import { GithubContext } from "../context/context";
 import { GoRepo, GoGist } from "react-icons/go";
 import { FiUsers, FiUserPlus } from "react-icons/fi";
+import "../styles/components/Info.scss";
 
 const Info = () => {
   const { githubUser } = React.useContext(GithubContext);
@@ -13,34 +14,34 @@ const Info = () => {
       icon: <GoRepo className="icon" />,
       label: "repos",
       value: public_repos,
-      color: "pink",
+      color: "hotpink",
     },
     {
       id: 2,
       icon: <FiUsers className="icon" />,
       label: "followers",
       value: followers,
-      color: "green",
+      color: "mediumspringgreen",
     },
     {
       id: 3,
       icon: <FiUserPlus className="icon" />,
       label: "following",
       value: following,
-      color: "purple",
+      color: "magenta",
     },
     {
       id: 4,
       icon: <GoGist className="icon" />,
       label: "gists",
       value: public_gists,
-      color: "yellow",
+      color: "cyan",
     },
   ];
 
   return (
-    <section className="section">
-      <div className="section-center" style={{ display: "flex" }}>
+    <section className="info-section">
+      <div className="info-section-center">
         {userInfoItems.map((item) => {
           return <Item key={item.id} {...item}></Item>;
         })}
@@ -50,15 +51,16 @@ const Info = () => {
 };
 
 const Item = ({ icon, label, value, color }) => {
+  console.log(color);
   return (
-    <article style={{ marginRight: "20px" }} className="item">
-      <span className={color}></span>
-      <div>
-        <h3>
-          {icon} {value}
-        </h3>
-        <p>{label}</p>
-      </div>
+    <article
+      className="item"
+      style={{ backgroundColor: `${color}`, opacity: "0.8" }}
+    >
+      <h3>
+        {icon} {value}
+      </h3>
+      <p>{label}</p>
     </article>
   );
 };

@@ -1,0 +1,24 @@
+.info-section {
+  width: 60vw;
+  margin: 20px auto;
+
+  .info-section-center {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    align-items: center;
+  }
+
+  .item {
+    width: 22%;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 1.3rem;
+    color: white;
+
+    p {
+      font-weight: 700;
+    }
+  }
+}
