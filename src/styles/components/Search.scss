@@ -1,5 +1,5 @@
 .search-section {
-  width: 60vw;
+  width: 75vw;
   margin: 20px auto;
 
   .error-div {
@@ -12,13 +12,18 @@
 
   .search-section-center {
     display: flex;
+    width: inherit;
     justify-content: space-between;
-    padding: 10px 20px 5px 20px;
+    padding: 10px 0 5px 0;
     align-items: center;
   }
 
+  form {
+    width: 75%;
+  }
+
   input {
-    width: 700px;
+    width: 60%;
     height: 2.7rem;
     margin-left: 10px;
     padding-left: 1rem;

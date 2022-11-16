@@ -41,7 +41,7 @@ const Search = () => {
             )}
           </div>
         </form>
-        <h3>Requests: {requests} / 60</h3>
+        <h3>Requests: {requests}/60</h3>
       </div>
     </section>
   );
