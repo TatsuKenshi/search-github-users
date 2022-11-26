@@ -6,6 +6,33 @@ import axios from "axios";
 
 const rootUrl = "https://api.github.com";
 
+const initialSize = () => {
+  let mySize;
+  if (window.innerWidth >= 1700) {
+    mySize = "550";
+  } else if (window.innerWidth >= 1500 && window.size <= 1699) {
+    mySize = "500";
+  } else if (window.innerWidth >= 1400 && window.innerWidth <= 1699) {
+    mySize = "450";
+  } else if (window.innerWidth >= 1200 && window.innerWidth <= 1499) {
+    mySize = "400";
+  } else if (window.innerWidth >= 1025 && window.innerWidth <= 1199) {
+    mySize = "350";
+  } else if (window.innerWidth >= 850 && window.innerWidth <= 1024) {
+    mySize = "550";
+  } else if (window.innerWidth >= 769 && window.innerWidth <= 849) {
+    mySize = "450";
+  } else if (window.innerWidth >= 600 && window.innerWidth <= 768) {
+    mySize = "500";
+  } else if (window.innerWidth >= 500 && window.innerWidth <= 599) {
+    mySize = "400";
+  } else if (window.innerWidth >= 400 && window.innerWidth <= 499) {
+    mySize = "350";
+  } else if (window.innerWidth < 400) {
+    mySize = "300";
+  }
+  return mySize;
+};
 const GithubContext = React.createContext();
 
 const GithubProvider = ({ children }) => {
@@ -16,6 +43,8 @@ const GithubProvider = ({ children }) => {
   const [requests, setRequests] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState({ show: false, msg: "" });
+  const [chartSize, setChartSize] = useState(initialSize);
+  console.log(chartSize);
 
   // search users on Github
   const searchGithubUser = async (user) => {
@@ -71,7 +100,7 @@ const GithubProvider = ({ children }) => {
         })
         .catch((err) => console.log(err));
     } else {
-      toggleError(true, "there is no user with that username");
+      toggleError(true, "no such user exists");
     }
 
     // check requests and turn off loading
@@ -111,6 +140,40 @@ const GithubProvider = ({ children }) => {
     }
   }, [checkRequests]);
 
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      const size = window.innerWidth;
+      console.log(size);
+      if (size >= 1700) {
+        setChartSize("550");
+      } else if (size >= 1500 && size <= 1699) {
+        setChartSize("500");
+      } else if (size >= 1400 && size <= 1699) {
+        setChartSize("450");
+      } else if (size >= 1200 && size <= 1499) {
+        setChartSize("400");
+      } else if (size >= 1025 && size <= 1199) {
+        setChartSize("350");
+      } else if (size >= 850 && size <= 1024) {
+        setChartSize("550");
+      } else if (size >= 769 && size <= 849) {
+        setChartSize("450");
+      } else if (size >= 600 && size <= 768) {
+        setChartSize("500");
+      } else if (size >= 500 && size <= 599) {
+        setChartSize("400");
+      } else if (size >= 400 && size <= 499) {
+        setChartSize("350");
+      } else if (size < 400) {
+        setChartSize("300");
+      }
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {});
+    };
+  }, []);
+
   return (
     <GithubContext.Provider
       value={{
@@ -121,6 +184,7 @@ const GithubProvider = ({ children }) => {
         isError,
         searchGithubUser,
         isLoading,
+        chartSize,
       }}
     >
       {children}

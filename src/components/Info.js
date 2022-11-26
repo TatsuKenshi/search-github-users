@@ -14,28 +14,28 @@ const Info = () => {
       icon: <GoRepo className="icon" />,
       label: "repos",
       value: public_repos,
-      color: "hotpink",
+      color: "indianred",
     },
     {
       id: 2,
       icon: <FiUsers className="icon" />,
       label: "followers",
       value: followers,
-      color: "mediumspringgreen",
+      color: "teal",
     },
     {
       id: 3,
       icon: <FiUserPlus className="icon" />,
       label: "following",
       value: following,
-      color: "magenta",
+      color: "purple",
     },
     {
       id: 4,
       icon: <GoGist className="icon" />,
       label: "gists",
       value: public_gists,
-      color: "cyan",
+      color: "dodgerblue",
     },
   ];
 
@@ -51,7 +51,6 @@ const Info = () => {
 };
 
 const Item = ({ icon, label, value, color }) => {
-  console.log(color);
   return (
     <article
       className="item"

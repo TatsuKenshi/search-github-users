@@ -1,6 +1,7 @@
 // STEP 1 - Include Dependencies
 // Include react
-import React from "react";
+import React, { useContext } from "react";
+import { GithubContext } from "../../context/context";
 
 // Include the react-fusioncharts component
 import ReactFC from "react-fusioncharts";
@@ -35,11 +36,12 @@ ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme);
 // instead of Step 4, the chartComponent function returns the ReactFC component with spread out chartConfigs object as the sole prop.
 
 const ChartComponent = ({ data }) => {
+  const { chartSize } = useContext(GithubContext);
   // STEP 3 - Creating the JSON object to store the chart configurations
   const chartConfigs = {
     type: "pie3d", // The chart type
-    width: "400", // Width of the chart
-    height: "400", // Height of the chart
+    width: chartSize, // Width of the chart
+    height: chartSize, // Height of the chart
     dataFormat: "json", // Data type
     dataSource: {
       // Chart Configuration
@@ -47,7 +49,7 @@ const ChartComponent = ({ data }) => {
         caption: "Most used languages",
         theme: "fusion",
         decimals: 1,
-        pieRadius: "45%",
+        pieRadius: "35%",
       },
       // below is the data prop
       data,

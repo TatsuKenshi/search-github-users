@@ -14,6 +14,10 @@ nav {
 
   h4 {
     margin-right: 20px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   button {
@@ -31,5 +35,9 @@ nav {
     border: solid 1px #fff;
     background: #fff;
     color: rgba(0, 128, 128, 0.8);
+  }
+
+  @media (max-width: 768px) {
+    justify-content: space-evenly;
   }
 }

@@ -27,10 +27,10 @@ const Search = () => {
       <div className="search-section-center">
         <form onSubmit={handleSubmit}>
           <div className="form-control">
-            <MdSearch size={24} />
+            {/* <MdSearch size={24} /> */}
             <input
               type="text"
-              placeholder="enter github user"
+              placeholder="user..."
               value={user}
               onChange={(e) => setUser(e.target.value)}
             />
