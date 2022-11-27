@@ -26,20 +26,17 @@ const Search = () => {
       </div>
       <div className="search-section-center">
         <form onSubmit={handleSubmit}>
-          <div className="form-control">
-            {/* <MdSearch size={24} /> */}
-            <input
-              type="text"
-              placeholder="user..."
-              value={user}
-              onChange={(e) => setUser(e.target.value)}
-            />
-            {requests > 0 && !isLoading && (
-              <button className="submit-btn" type="submit">
-                Search
-              </button>
-            )}
-          </div>
+          <input
+            type="text"
+            placeholder="user..."
+            value={user}
+            onChange={(e) => setUser(e.target.value)}
+          />
+          {requests > 0 && !isLoading && (
+            <button className="submit-btn" type="submit">
+              {window.innerWidth > 768 ? "Search" : <MdSearch size={20} />}
+            </button>
+          )}
         </form>
         <h3>Requests: {requests}/60</h3>
       </div>
