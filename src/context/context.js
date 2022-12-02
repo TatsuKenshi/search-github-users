@@ -44,7 +44,6 @@ const GithubProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState({ show: false, msg: "" });
   const [chartSize, setChartSize] = useState(initialSize);
-  console.log(chartSize);
 
   // search users on Github
   const searchGithubUser = async (user) => {
@@ -143,7 +142,7 @@ const GithubProvider = ({ children }) => {
   useEffect(() => {
     window.addEventListener("resize", () => {
       const size = window.innerWidth;
-      console.log(size);
+
       if (size >= 1700) {
         setChartSize("550");
       } else if (size >= 1500 && size <= 1699) {

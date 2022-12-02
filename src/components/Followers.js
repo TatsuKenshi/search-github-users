@@ -1,39 +1,36 @@
 import React from "react";
 import { GithubContext } from "../context/context";
+import "../styles/components/Followers.scss";
 
 const Followers = () => {
   const { followers } = React.useContext(GithubContext);
 
   return (
-    <div
-      className="followers"
-      style={{
-        width: "400px",
-        height: "300px",
-        overflow: "scroll",
-        background: "cyan",
-      }}
-    >
-      {followers.map((follower, index) => {
-        const { avatar_url: img, html_url, login } = follower;
-        return (
-          <article key={index} style={{ display: "flex" }}>
-            <div>
-              <img
-                src={img}
-                alt={login}
-                width="50px"
-                height="50px"
-                style={{ borderRadius: "50%" }}
-              />
-            </div>
-            <div>
-              <h4>{login}</h4>
-              <a href={html_url}>{html_url}</a>
-            </div>
-          </article>
-        );
-      })}
+    <div className="followers">
+      <div className="followers-title">
+        <div className="followers-tag">followers</div>
+      </div>
+
+      <div className="followers-container">
+        {followers.map((follower, index) => {
+          const { avatar_url: img, html_url, login } = follower;
+          return (
+            <article
+              key={index}
+              style={{ display: "flex" }}
+              className="single-follower"
+            >
+              <div className="image-div">
+                <img className="image" src={img} alt={login} />
+              </div>
+              <div className="info-div">
+                <h4>{login}</h4>
+                <a href={html_url}>{html_url}</a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
     </div>
   );
 };

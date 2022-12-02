@@ -11,9 +11,11 @@
     justify-content: space-between;
     padding: 10px;
     align-items: center;
+    height: 300px;
 
     @media (max-width: 1024px) {
       display: block;
+      height: max-content;
     }
   }
 }

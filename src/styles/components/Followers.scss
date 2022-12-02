@@ -1,0 +1,58 @@
+.followers {
+  width: 44%;
+  height: inherit;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  .followers-title {
+    width: inherit;
+
+    .followers-tag {
+      width: max-content;
+      padding: 5px 20px;
+      background-color: white;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: teal;
+    }
+  }
+
+  .followers-container {
+    overflow: scroll;
+    height: 263px;
+
+    .single-follower {
+      background-color: white;
+      padding: 10px;
+
+      .image-div {
+        margin-right: 10px;
+
+        .image {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+      }
+
+      .info-div {
+        h4 {
+          color: teal;
+          font-size: 0.9rem;
+          font-weight: 800;
+          margin-top: 10px;
+        }
+
+        a {
+          color: teal;
+          font-size: 0.9rem;
+          font-weight: 800;
+          text-decoration: none;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}

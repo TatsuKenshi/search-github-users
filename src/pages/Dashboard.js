@@ -9,10 +9,14 @@ const Dashboard = () => {
 
   if (isLoading) {
     return (
-      <main>
-        <Navbar />
-        <Search />
-        <img src={loadingImage} alt="loading spinner" className="loading-img" />
+      <main style={{ display: "flex", justifyContent: "center" }}>
+        <div className="loading-div">
+          <img
+            src={loadingImage}
+            alt="loading spinner"
+            className="loading-img"
+          />
+        </div>
       </main>
     );
   }

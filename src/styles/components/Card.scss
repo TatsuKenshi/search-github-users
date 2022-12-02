@@ -1,1 +1,104 @@
+.user-main {
+  width: 54%;
 
+  @media (max-width: 1024px) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .user-title {
+    width: inherit;
+
+    .user-tag {
+      width: max-content;
+      padding: 5px 20px;
+      background-color: white;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: teal;
+    }
+  }
+
+  section {
+    display: flex;
+    background-color: white;
+
+    @media (max-width: 550px) {
+      display: block;
+      text-align: center;
+    }
+
+    header {
+      width: 35%;
+      padding: 20px;
+
+      @media (max-width: 550px) {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .header-info {
+        margin-top: 10px;
+        h4 {
+          font-size: 1.3rem;
+          font-weight: 800;
+          color: teal;
+          margin-top: 10px;
+        }
+
+        p {
+          font-size: 1rem;
+          font-weight: 800;
+          color: teal;
+          margin: 10px 0;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        font-weight: 800;
+        color: teal;
+      }
+    }
+
+    article {
+      width: 65%;
+      padding: 20px;
+
+      @media (max-width: 550px) {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .bio {
+        color: teal;
+        font-size: 1rem;
+        font-weight: 800;
+        margin-top: 10px;
+      }
+      .company {
+        color: teal;
+        font-size: 1rem;
+        font-weight: 800;
+        margin-top: 10px;
+      }
+      .location {
+        color: teal;
+        font-size: 1rem;
+        font-weight: 800;
+        margin-top: 10px;
+      }
+      .blog {
+        margin-top: 10px;
+        a {
+          color: teal;
+          font-size: 1rem;
+          font-weight: 800;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

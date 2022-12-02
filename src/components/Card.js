@@ -1,6 +1,7 @@
 import React from "react";
 import { GithubContext } from "../context/context";
 import { MdBusiness, MdLocationOn, MdLink } from "react-icons/md";
+import "../styles/components/Card.scss";
 
 const Card = () => {
   const { githubUser } = React.useContext(GithubContext);
@@ -16,48 +17,44 @@ const Card = () => {
   } = githubUser;
 
   return (
-    <div
-      style={{
-        background: "cyan",
-        width: "700px",
-        height: "300px",
-      }}
-    >
-      <header
-        style={{
-          display: "flex",
-          background: "aliceBlue",
-          width: "max-content",
-        }}
-      >
-        <img
-          src={avatar_url}
-          alt={name}
-          width="100px"
-          height="100px"
-          style={{ borderRadius: "50%" }}
-        />
-        <div>
-          <h4>{name}</h4>
-          <p>@{twitter_username || "not provided"}</p>
-        </div>
-        <a href={html_url}>visit</a>
-      </header>
-      <p className="bio">{bio}</p>
-      <div className="link">
-        <p>
-          <MdBusiness></MdBusiness> {company}
-        </p>
-        <p>
-          <MdLocationOn></MdLocationOn> {location || "earth"}
-        </p>
-        <p>
-          <a href={`https://${blog}`}>
-            <MdLink></MdLink>
-            {blog}
-          </a>
-        </p>
+    <div className="user-main">
+      <div className="user-title">
+        <div className="user-tag">user</div>
       </div>
+      <section>
+        <header>
+          <img
+            src={avatar_url}
+            alt={name}
+            width="150px"
+            height="150px"
+            style={{ borderRadius: "50%" }}
+          />
+          <div className="header-info">
+            <h4 className="name">{name}</h4>
+            <p className="twitter">@{twitter_username || "not provided"}</p>
+          </div>
+          <a href={html_url} className="html">
+            visit
+          </a>
+        </header>
+
+        <article>
+          <p className="bio">{bio}</p>
+          <p className="company">
+            <MdBusiness></MdBusiness> {company}
+          </p>
+          <p className="location">
+            <MdLocationOn></MdLocationOn> {location || "earth"}
+          </p>
+          <p className="blog">
+            <a href={`https://${blog}`}>
+              <MdLink></MdLink>
+              {blog}
+            </a>
+          </p>
+        </article>
+      </section>
     </div>
   );
 };
